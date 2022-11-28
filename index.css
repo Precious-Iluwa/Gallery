@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #b90dee;
+    box-shadow: inset 0 0 5px rgb(223, 13, 13);
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(236, 50, 50);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(42, 8, 231);
+}
+.container{
+    padding: 10px 0;
+    text-align: center;
+}
+.header{
+    background-color: #b90dee;
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+}
+nav{
+    display: block;
+    float: right;
+    width: 60%;
+    padding-top: 5px;
+}
+nav ul li{
+    display: inline-block;
+    margin-left: 2%;
+    transition: .5s;
+}
+nav ul li:hover{
+    border: 1px solid gold;
+    transform: scale(1.2);
+    padding: 5px 9px;
+}
+nav ul li a{
+    color: #eee;
+    font-size: 1.1em;
+}
+nav ul li a:hover{
+    color: gold;
+}
+.search{
+    margin-top: 30px;
+    padding-top: 5%;
+}
+#search-box{
+    width: 350px;
+    padding: 10px 2%;
+    border-radius: 15px;
+}
+#search-box::placeholder{
+    font-family: sans-serif;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: scale(.7) translateY(-10px);
+        opacity: 0;
+    }
+}
+.gallery-container{
+    text-align: center;
+    margin-top:2px;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 30px;
+}
+.img-container{
+    width: 350px;
+    background-color:  white;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+.img-container:hover{
+    animation: fadeIn .5s;
+}
+.img-container img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    animation: fadeIn .2s linear;
+}
+.img-container img:hover{
+    
+}
+.img-container h4{
+    color: #b90dee;
+}
+@media (max-width: 768px){
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 25px 20px;
+    }
+    .img-container{
+        width: 100%;
+    }
+    #search-box{
+        width: 90%;
+    }
+    nav{
+        display: none;
+    }
+}
+
+@media (max-width:450px){
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 25px 20px;
+    }
+    .img-container{
+        width: 100%;
+    }
+    #search-box{
+        width: 100%;
+    }
+    nav{
+        display: none;
+    }
+
+}
